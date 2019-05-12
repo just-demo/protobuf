@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_package = "self.ed.proto";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+message ProtoTask {
+    int64 id = 1;
+    int64 created_by = 2;
+    google.protobuf.Timestamp created_date = 3;
+    int64 updated_by = 4;
+    google.protobuf.Timestamp updated_date = 5;
+    int64 version = 6;
+    string name = 7;
+    string description = 8;
+    bool draft = 9;
+    repeated ProtoSubTask sub_tasks = 10;
+}
+
+message ProtoSubTask {
+    int64 id = 1;
+    int64 created_by = 2;
+    google.protobuf.Timestamp created_date = 3;
+    int64 updated_by = 4;
+    google.protobuf.Timestamp updated_date = 5;
+    int64 version = 6;
+    string name = 7;
+    string description = 8;
+    google.protobuf.Int32Value estimate = 9;
+    ProtoStatus status = 10;
+    string result = 11;
+}
+
+enum ProtoStatus {
+    PENDING = 0;
+    STARTED = 1;
+    REJECTED = 2;
+    DONE = 3;
+}
