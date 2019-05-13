@@ -1,6 +1,7 @@
 package self.ed.pojo;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class PojoSubTask {
     private Long id;
@@ -131,5 +132,45 @@ public class PojoSubTask {
 
     public void setResult(String result) {
         this.result = result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PojoSubTask that = (PojoSubTask) o;
+        return version == that.version &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(createdBy, that.createdBy) &&
+                Objects.equals(createdDate, that.createdDate) &&
+                Objects.equals(updatedBy, that.updatedBy) &&
+                Objects.equals(updatedDate, that.updatedDate) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(estimate, that.estimate) &&
+                status == that.status &&
+                Objects.equals(result, that.result);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, createdBy, createdDate, updatedBy, updatedDate, version, name, description, estimate, status, result);
+    }
+
+    @Override
+    public String toString() {
+        return "PojoSubTask{" +
+                "id=" + id +
+                ", createdBy=" + createdBy +
+                ", createdDate=" + createdDate +
+                ", updatedBy=" + updatedBy +
+                ", updatedDate=" + updatedDate +
+                ", version=" + version +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", estimate=" + estimate +
+                ", status=" + status +
+                ", result='" + result + '\'' +
+                '}';
     }
 }

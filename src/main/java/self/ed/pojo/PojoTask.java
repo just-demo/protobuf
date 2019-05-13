@@ -1,7 +1,9 @@
 package self.ed.pojo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class PojoTask {
     private Long id;
@@ -13,7 +15,7 @@ public class PojoTask {
     private String name;
     private String description;
     private boolean draft;
-    private List<PojoSubTask> subTasks;
+    private List<PojoSubTask> subTasks = new ArrayList<>();
 
     public PojoTask() {
         // for deserialization
@@ -121,5 +123,43 @@ public class PojoTask {
 
     public void setSubTasks(List<PojoSubTask> subTasks) {
         this.subTasks = subTasks;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PojoTask pojoTask = (PojoTask) o;
+        return version == pojoTask.version &&
+                draft == pojoTask.draft &&
+                Objects.equals(id, pojoTask.id) &&
+                Objects.equals(createdBy, pojoTask.createdBy) &&
+                Objects.equals(createdDate, pojoTask.createdDate) &&
+                Objects.equals(updatedBy, pojoTask.updatedBy) &&
+                Objects.equals(updatedDate, pojoTask.updatedDate) &&
+                Objects.equals(name, pojoTask.name) &&
+                Objects.equals(description, pojoTask.description) &&
+                Objects.equals(subTasks, pojoTask.subTasks);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, createdBy, createdDate, updatedBy, updatedDate, version, name, description, draft, subTasks);
+    }
+
+    @Override
+    public String toString() {
+        return "PojoTask{" +
+                "id=" + id +
+                ", createdBy=" + createdBy +
+                ", createdDate=" + createdDate +
+                ", updatedBy=" + updatedBy +
+                ", updatedDate=" + updatedDate +
+                ", version=" + version +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", draft=" + draft +
+                ", subTasks=" + subTasks +
+                '}';
     }
 }
