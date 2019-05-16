@@ -14,8 +14,8 @@ import java.util.Date;
 
 import static java.util.Arrays.asList;
 
-class TaskGenerator {
-    static class Task {
+public class Generator {
+    public static class Task {
         long id = 123L;
         long createdBy = 456L;
         long createdDate = 1526124042000L;
@@ -53,11 +53,11 @@ class TaskGenerator {
         String result2 = "sub-task result 2";
     }
 
-    static Task generateTask() {
+    public static Task generateTask() {
         return new Task();
     }
 
-    static PojoTask toPojoTask(Task task) {
+    public static PojoTask toPojoTask(Task task) {
         return new PojoTask(
                 task.id,
                 task.createdBy,
@@ -99,7 +99,7 @@ class TaskGenerator {
         );
     }
 
-    static ProtoTask toProtoTask(Task task) {
+    public static ProtoTask toProtoTask(Task task) {
         return ProtoTask.newBuilder()
                 .setId(task.id)
                 .setCreatedBy(task.createdBy)

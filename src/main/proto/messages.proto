@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "self.ed.proto";
+package self.ed.proto;
 option java_multiple_files = true;
 
 import "google/protobuf/timestamp.proto";

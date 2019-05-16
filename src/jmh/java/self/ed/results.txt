@@ -50,3 +50,17 @@ SerializationBenchmark.testPojoToJsonBytes        thrpt   25  436136.163 ▒  34
 SerializationBenchmark.testProtoToBytes           thrpt   25  641204.063 ▒  17954.329  ops/s
 SerializationBenchmark.testProtoToJson            thrpt   25   49440.075 ▒   2402.157  ops/s
 SerializationBenchmark.testProtoToJson_Jackson    thrpt   25   76564.704 ▒   3093.198  ops/s
+
+SerializationBenchmark.pojoBuilder   thrpt   25  11818688.349 ▒ 1274165.475  ops/s
+SerializationBenchmark.protoBuilder  thrpt   25   5161201.436 ▒  514342.847  ops/s
+
+Benchmark                                           Mode  Cnt         Score         Error  Units
+SerializationBenchmark.pojoBuilder                 thrpt   25  10604850.897 ▒ 1273294.374  ops/s
+SerializationBenchmark.protoBuilder                thrpt   25   4220590.619 ▒  147150.227  ops/s
+SerializationBenchmark.protoBuilder_ModifyRebuild  thrpt   25   4100589.981 ▒  410926.486  ops/s
+SerializationBenchmark.protoBuilder_Rebuild        thrpt   25   3453753.526 ▒  273539.695  ops/s
+
+
+TODO: compare size of proto vs json
+TODO: create an example of externalized .proto
+TODO: compare pojo-json vs proto-json vs proto-jackson-json

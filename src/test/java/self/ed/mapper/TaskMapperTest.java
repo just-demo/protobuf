@@ -1,5 +1,7 @@
 package self.ed.mapper;
 
+import io.github.benas.randombeans.EnhancedRandomBuilder;
+import io.github.benas.randombeans.api.EnhancedRandom;
 import org.junit.Test;
 import self.ed.pojo.PojoSubTask;
 import self.ed.pojo.PojoTask;
@@ -8,9 +10,12 @@ import self.ed.proto.ProtoTask;
 
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
-import static self.ed.util.RandomUtils.random;
 
 public class TaskMapperTest {
+    private static final EnhancedRandom RANDOM = new EnhancedRandomBuilder()
+            .collectionSizeRange(0, 0)
+            .build();
+
     @Test
     public void mapTask() {
         PojoTask input = random(PojoTask.class);
@@ -34,5 +39,9 @@ public class TaskMapperTest {
         ProtoSubTask inter = TaskMapper.INSTANCE.map(input);
         PojoSubTask output = TaskMapper.INSTANCE.map(inter);
         assertEquals(input, output);
+    }
+
+    private <T> T random(Class<T> type) {
+        return RANDOM.nextObject(type);
     }
 }
