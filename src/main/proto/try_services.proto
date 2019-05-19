@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package self.ed.proto.service;
+option java_multiple_files = true;
+option java_generic_services = true;
+
+message SearchRequest {
+    string query = 1;
+}
+
+message SearchResponse {
+    string result = 1;
+}
+
+service SearchService {
+    rpc Search (SearchRequest) returns (SearchResponse);
+}
