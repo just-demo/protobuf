@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package self.ed.proto;
+
+message JsonNameMessage {
+    int32 id = 1 [json_name = "json_id"];
+}
