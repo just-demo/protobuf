@@ -8,6 +8,6 @@ message DefaultMessage {
         B = 1;
         C = 2;
     }
-    optional int32 id = 1 [default = 123];
+    required int32 id = 1 [default = 123];
     optional Type type = 2 [default = B];
 }
