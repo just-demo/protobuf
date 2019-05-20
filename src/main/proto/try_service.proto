@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package self.ed.proto;
+option java_multiple_files = true;
+option java_generic_services = true;
+
+message ServiceRequest {
+    string input = 1;
+}
+
+message ServiceResponse {
+    string output = 1;
+}
+
+service DemoService {
+    rpc Demo (ServiceRequest) returns (ServiceResponse);
+}
