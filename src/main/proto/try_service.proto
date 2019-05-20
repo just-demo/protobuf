@@ -4,6 +4,9 @@ package self.ed.proto;
 option java_multiple_files = true;
 option java_generic_services = true;
 
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
 message ServiceRequest {
     string input = 1;
 }
@@ -12,6 +15,14 @@ message ServiceResponse {
     string output = 1;
 }
 
-service DemoService {
+service CustomService {
     rpc Demo (ServiceRequest) returns (ServiceResponse);
+}
+
+service WrapperService {
+    rpc Demo (google.protobuf.StringValue) returns (google.protobuf.BoolValue);
+}
+
+service EmptyService {
+    rpc Demo (google.protobuf.Empty) returns (google.protobuf.Empty);
 }
