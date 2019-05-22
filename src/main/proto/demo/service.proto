@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package demo.proto;
+option java_multiple_files = true;
+option java_generic_services = true;
+
+message DemoRequest {
+    string input = 1;
+}
+
+message DemoResponse {
+    string output = 1;
+}
+
+service DemoService {
+    rpc Demo (DemoRequest) returns (DemoResponse);
+}
