@@ -1,6 +1,9 @@
 gradlew --stop
 gradlew clean jmh
 
+./gradlew --stop
+./gradlew clean jmh
+
 ======================
 without delegate to gradle proto files will not be build automatically when running a class from intellij, also generated sources will not be available
 1) int64 vs object
