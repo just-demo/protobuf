@@ -127,6 +127,29 @@ TestSerialization.serializeProtoToBytes                           thrpt   25    
 TestSerialization.serializeProtoToJson                            thrpt   25      12616.586 ±    329.756  ops/s
 TestSerialization.serializeProtoToJson_Jackson                    thrpt   25      21647.073 ±    446.068  ops/s
 
+---------- random data per invocation ------------
+Benchmark                                                          Mode  Cnt          Score        Error  Units
+TestDeserialization.deserializePojoFromJson                       thrpt   25      53381.662 ±    561.351  ops/s
+TestDeserialization.deserializePojoFromJsonBytes                  thrpt   25      57580.639 ±    833.711  ops/s
+TestDeserialization.deserializePojoFromJsonBytes_NewObjectMapper  thrpt   25       2435.325 ±     36.557  ops/s
+TestDeserialization.deserializePojoFromJson_NewObjectMapper       thrpt   25       2454.195 ±     35.331  ops/s
+TestDeserialization.deserializeProtoFromBytes                     thrpt   25     144296.750 ±   1288.599  ops/s
+TestDeserialization.deserializeProtoFromJson                      thrpt   25      10168.479 ±    121.619  ops/s
+TestDeserialization.deserializeProtoFromJson_ObjectMapper         thrpt   25      12834.364 ±    270.049  ops/s
+TestInstantiation.newJacksonMapper                                thrpt   25     470015.870 ±   2434.628  ops/s
+TestInstantiation.newProtoParser                                  thrpt   25  982635752.495 ± 440896.510  ops/s
+TestInstantiation.newProtoPrinter                                 thrpt   25  983027408.518 ± 400276.845  ops/s
+TestSerialization.newPojo                                         thrpt   25    3300324.467 ± 142337.825  ops/s
+TestSerialization.newProto                                        thrpt   25    1458499.069 ±  53667.429  ops/s
+TestSerialization.newProto_Rebuild                                thrpt   25    1178434.059 ±  44305.983  ops/s
+TestSerialization.serializePojoToJson                             thrpt   25     109603.243 ±    391.460  ops/s
+TestSerialization.serializePojoToJsonBytes                        thrpt   25     112700.301 ±   2110.450  ops/s
+TestSerialization.serializePojoToJsonBytes_NewObjectMapper        thrpt   25       1864.222 ±     14.451  ops/s
+TestSerialization.serializePojoToJson_NewObjectMapper             thrpt   25       1871.573 ±     18.780  ops/s
+TestSerialization.serializeProtoToBytes                           thrpt   25     177102.603 ±   1390.789  ops/s
+TestSerialization.serializeProtoToJson                            thrpt   25      12498.278 ±    314.647  ops/s
+TestSerialization.serializeProtoToJson_Jackson                    thrpt   25      20063.854 ±    195.567  ops/s
+
 
 TODO: create an example of externalized .proto
 TODO: compare pojo-json vs proto-json vs proto-jackson-json
