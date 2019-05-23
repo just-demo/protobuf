@@ -13,6 +13,7 @@ import java.time.Instant;
 import java.util.Date;
 
 import static java.util.Arrays.asList;
+import static self.ed.util.RandomUtils.random;
 
 public class Generator {
     public static class Task {
@@ -54,7 +55,8 @@ public class Generator {
     }
 
     public static Task generateTask() {
-        return new Task();
+//        return new Task();
+        return random(Task.class);
     }
 
     public static PojoTask toPojoTask(Task task) {

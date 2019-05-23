@@ -1,10 +1,7 @@
 package self.ed.benchmark;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.*;
 import self.ed.pojo.PojoTask;
 import self.ed.proto.ProtoTask;
 
@@ -22,7 +19,7 @@ public class TestDeserialization {
         private byte[] pojoBytes;
         private String pojoJson;
 
-        @Setup //(Level.Invocation)
+        @Setup(Level.Invocation)
         public void setup() throws IOException {
             Task task = generateTask();
             ProtoTask protoTask = toProtoTask(task);

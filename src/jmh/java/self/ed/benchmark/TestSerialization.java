@@ -1,10 +1,7 @@
 package self.ed.benchmark;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.*;
 
 import java.io.IOException;
 
@@ -15,7 +12,7 @@ public class TestSerialization {
     @State(Scope.Thread)
     public static class InputState {
         private Task task;
-        @Setup //(Level.Invocation)
+        @Setup(Level.Invocation)
         public void setup() {
             task = generateTask();
         }
