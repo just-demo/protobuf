@@ -82,6 +82,28 @@ TestSerialization.serializeProtoToBytes                           thrpt   25    
 TestSerialization.serializeProtoToJson                            thrpt   25       17003.982 ▒      6358.805  ops/s
 TestSerialization.serializeProtoToJson_Jackson                    thrpt   25       31195.920 ▒      5902.044  ops/s
 
+Benchmark                                                          Mode  Cnt           Score           Error  Units
+TestDeserialization.deserializePojoFromJson                       thrpt   25      304559.587 ±      5425.182  ops/s
+TestDeserialization.deserializePojoFromJsonBytes                  thrpt   25      387228.895 ±      6647.734  ops/s
+TestDeserialization.deserializePojoFromJsonBytes_NewObjectMapper  thrpt   25       14712.869 ±       127.073  ops/s
+TestDeserialization.deserializePojoFromJson_NewObjectMapper       thrpt   25       14699.613 ±        83.869  ops/s
+TestDeserialization.deserializeProtoFromBytes                     thrpt   25     1044009.325 ±      9871.724  ops/s
+TestDeserialization.deserializeProtoFromJson                      thrpt   25       55159.517 ±       668.680  ops/s
+TestDeserialization.deserializeProtoFromJson_ObjectMapper         thrpt   25       68976.689 ±       994.407  ops/s
+TestInstantiation.newJacksonMapper                                thrpt   25     1688719.714 ±    108808.617  ops/s
+TestInstantiation.newProtoParser                                  thrpt   25  3478966057.077 ± 174057005.117  ops/s
+TestInstantiation.newProtoPrinter                                 thrpt   25  3545030908.706 ±  63540514.947  ops/s
+TestSerialization.newPojo                                         thrpt   25    13590005.214 ±   1162938.331  ops/s
+TestSerialization.newProto                                        thrpt   25     5463739.782 ±    495694.107  ops/s
+TestSerialization.newProto_Rebuild                                thrpt   25     5033838.840 ±     37383.528  ops/s
+TestSerialization.serializePojoToJson                             thrpt   25      604362.946 ±     10805.286  ops/s
+TestSerialization.serializePojoToJsonBytes                        thrpt   25      621675.270 ±      7020.930  ops/s
+TestSerialization.serializePojoToJsonBytes_NewObjectMapper        thrpt   25        7287.211 ±        36.816  ops/s
+TestSerialization.serializePojoToJson_NewObjectMapper             thrpt   25        7314.825 ±       107.975  ops/s
+TestSerialization.serializeProtoToBytes                           thrpt   25      571410.479 ±    140427.608  ops/s
+TestSerialization.serializeProtoToJson                            thrpt   25       30820.721 ±       819.089  ops/s
+TestSerialization.serializeProtoToJson_Jackson                    thrpt   25       44108.044 ±      3787.955  ops/s
+
 ==================== less powerful machine ===================
 Benchmark                                                          Mode  Cnt          Score        Error  Units
 TestDeserialization.deserializePojoFromJson                       thrpt   25      84611.294 ±    954.780  ops/s
