@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package self.ed.proto.any;
+
+import "google/protobuf/any.proto";
+
+option java_multiple_files = true;
+
+message AnyOne {
+    string name = 1;
+}
+
+message AnyTwo {
+    int32 count = 1;
+}
+
+message Demo {
+    int32 id = 1;
+    google.protobuf.Any any = 2;
+}

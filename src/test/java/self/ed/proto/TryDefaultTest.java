@@ -10,6 +10,7 @@ public class TryDefaultTest {
     public void testDefault() {
         TryDefault.DefaultMessage.Builder builder = TryDefault.DefaultMessage.newBuilder();
         assertEquals(123, builder.getId());
+        assertEquals("demo", builder.getName());
         assertEquals(B, builder.getType());
     }
 }

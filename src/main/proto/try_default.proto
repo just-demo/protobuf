@@ -9,5 +9,6 @@ message DefaultMessage {
         C = 2;
     }
     required int32 id = 1 [default = 123];
-    optional Type type = 2 [default = B];
+    optional string name = 2 [default = "demo"];
+    optional Type type = 3 [default = B];
 }
