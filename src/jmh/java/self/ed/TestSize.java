@@ -14,14 +14,24 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static self.ed.Generator.*;
 
 public class TestSize {
+    // 2 items in the collection
     // Json: 668
     // Json gzip: 287
     // Proto: 248
+
+    // 200 items in the collection
+    // Json: 47990
+    // Proto: 19058
+
+    // 5000 items in the collection
+    // Json file: 1195190
+    // Proto file: 475058
     public static void main(String[] args) throws IOException {
         Path out = Paths.get("tmp");
         File jsonOut = out.resolve("json").toFile();
         File protoOut = out.resolve("proto").toFile();
 
+        FileUtils.deleteQuietly(out.toFile());
         Files.createDirectories(out);
         Files.createFile(jsonOut.toPath());
         Files.createFile(protoOut.toPath());
