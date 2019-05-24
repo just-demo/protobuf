@@ -10,7 +10,9 @@ import self.ed.proto.ProtoSubTask;
 import self.ed.proto.ProtoTask;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static java.util.Arrays.asList;
 import static self.ed.util.RandomUtils.random;
@@ -55,11 +57,40 @@ public class Generator {
     }
 
     public static Task generateTask() {
-//        return new Task();
-        return random(Task.class);
+//        return random(Task.class);
+        return new Task();
     }
 
     public static PojoTask toPojoTask(Task task) {
+        List<PojoSubTask> subTasks = new ArrayList<>(5000);
+        for (int i = 0; i < 2500; i++) {
+            subTasks.add(new PojoSubTask(
+                    task.id1,
+                    task.createdBy1,
+                    new Date(task.createdDate1),
+                    task.updatedBy1,
+                    new Date(task.updatedDate1),
+                    task.version1,
+                    task.name1,
+                    task.description1,
+                    task.estimate1,
+                    task.pojoStatus1,
+                    task.result1
+            ));
+            subTasks.add(new PojoSubTask(
+                    task.id2,
+                    task.createdBy2,
+                    new Date(task.createdDate2),
+                    task.updatedBy2,
+                    new Date(task.updatedDate2),
+                    task.version2,
+                    task.name2,
+                    task.description2,
+                    task.estimate2,
+                    task.pojoStatus2,
+                    task.result2
+            ));
+        }
         return new PojoTask(
                 task.id,
                 task.createdBy,
@@ -70,6 +101,8 @@ public class Generator {
                 task.name,
                 task.description,
                 task.draft,
+                subTasks
+                /*
                 asList(
                         new PojoSubTask(
                                 task.id1,
@@ -98,11 +131,12 @@ public class Generator {
                                 task.result2
                         )
                 )
+                */
         );
     }
 
     public static ProtoTask toProtoTask(Task task) {
-        return ProtoTask.newBuilder()
+        ProtoTask.Builder builder = ProtoTask.newBuilder()
                 .setId(task.id)
                 .setCreatedBy(task.createdBy)
                 .setCreatedDate(toTimestamp(task.createdDate))
@@ -111,7 +145,9 @@ public class Generator {
                 .setVersion(task.version)
                 .setName(task.name)
                 .setDescription(task.description)
-                .setDraft(task.draft)
+                .setDraft(task.draft);
+        for (int i = 0; i < 2500; i++) {
+            builder
                 .addSubTasks(ProtoSubTask.newBuilder()
                         .setId(task.id1)
                         .setCreatedBy(task.createdBy1)
@@ -136,7 +172,9 @@ public class Generator {
                         .setEstimate(Int32Value.of(task.estimate2))
                         .setStatus(task.protoStatus2)
                         .setResult(task.result2))
-                .build();
+            ;
+        }
+        return builder.build();
     }
 
     private static Timestamp toTimestamp(long time) {
