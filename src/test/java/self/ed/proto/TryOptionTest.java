@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import static self.ed.proto.TryCustomOptions.fieldOption;
 import static self.ed.proto.TryCustomOptions.messageOption;
 
-public class TryCustomOptionsTest {
+public class TryOptionTest {
     @Test
     public void testMessageOption() {
         assertEquals("Message option", TryCustomOptions.CustomOptionsMessage.getDescriptor().getOptions().getExtension(messageOption));

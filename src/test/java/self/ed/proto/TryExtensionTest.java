@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class TryExtensionsTest {
+public class TryExtensionTest {
     @Test
     public void testExtension() throws InvalidProtocolBufferException {
         TryExtensions.ExtensionsMessage message = TryExtensions.ExtensionsMessage.newBuilder()
