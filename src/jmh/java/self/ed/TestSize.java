@@ -26,6 +26,10 @@ public class TestSize {
     // 5000 items in the collection
     // Json file: 1195190
     // Proto file: 475058
+
+    // Very long string value:
+    // Json: 1050652
+    // Proto: 1050234
     public static void main(String[] args) throws IOException {
         Path out = Paths.get("tmp");
         File jsonOut = out.resolve("json").toFile();
