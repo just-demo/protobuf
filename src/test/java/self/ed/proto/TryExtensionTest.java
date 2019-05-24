@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
 public class TryExtensionTest {
     @Test
     public void testExtension() throws InvalidProtocolBufferException {
-        TryExtensions.ExtensionsMessage message = TryExtensions.ExtensionsMessage.newBuilder()
+        TryExtension.ExtensionsMessage message = TryExtension.ExtensionsMessage.newBuilder()
                 .setId(1)
-                .setExtension(TryExtensions.name, "Demo name")
+                .setExtension(TryExtension.name, "Demo name")
                 .build();
 
         assertEquals("{\"id\":1,\"name\":\"Demo name\"}", JsonFormat.printer().omittingInsignificantWhitespace().print(message));
