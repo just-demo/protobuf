@@ -30,6 +30,10 @@ public class TestSize {
     // Very long string value:
     // Json: 1050652
     // Proto: 1050234
+
+    // Single character field names in POJO:
+    // Json: 455
+    // Proto: 248
     public static void main(String[] args) throws IOException {
         Path out = Paths.get("tmp");
         File jsonOut = out.resolve("json").toFile();
