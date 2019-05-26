@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package just.demo;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_package = "com.just.demo";
+option java_multiple_files = true;
+option java_outer_classname = "DemoCustomOuter";
+option optimize_for = SPEED; // SPEED, CODE_SIZE, LITE_RUNTIME
+
+message Demo {
+    int32 id = 1;
+    repeated DemoEnum type = 2;
+    map<string, google.protobuf.Int32Value> counts = 3;
+    oneof demo_oneof {
+        google.protobuf.Timestamp due_date = 5 [json_name = "end_date", deprecated = true];
+        DemoNested nested = 10;
+    }
+    reserved 4, 6 to 9;
+    reserved "start_date";
+    message DemoNested {}
+}
+
+enum DemoEnum {ABC = 0; DEF = 1;}
