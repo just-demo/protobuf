@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package self.ed.proto.struct;
+
+import "google/protobuf/struct.proto";
+
+option java_multiple_files = true;
+
+message Struct {
+    map<string, Value> fields = 1;
+}
+
+message Value {
+    oneof kind {
+        double number_value = 1;
+        string string_value = 2;
+    }
+}
+
+message ValueDirectUsage {
+    google.protobuf.Value value = 1;
+}
