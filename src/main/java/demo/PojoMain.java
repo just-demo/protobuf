@@ -1,5 +1,7 @@
 package demo;
 
+import demo.pojo.User;
+
 public class PojoMain {
     public static void main(String[] args) {
         User user = new User(123, "demo");

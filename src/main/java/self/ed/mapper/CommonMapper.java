@@ -10,14 +10,12 @@ import java.util.Date;
 
 @Mapper
 public interface CommonMapper {
-    CommonMapper INSTANCE = Mappers.getMapper(CommonMapper.class);
-
     default Integer map(Int32Value value) {
         return value.getValue();
     }
 
     default Int32Value map(Integer value) {
-        return Int32Value.newBuilder().setValue(value).build();
+        return Int32Value.of(value);
     }
 
     default Date map(Timestamp timestamp) {
