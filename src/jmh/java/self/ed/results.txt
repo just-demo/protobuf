@@ -105,6 +105,15 @@ TestSerialization.serializeProtoToBytes                           thrpt   25    
 TestSerialization.serializeProtoToJson                            thrpt   25       64985.082 ±      2184.085  ops/s
 TestSerialization.serializeProtoToJson_Jackson                    thrpt   25      103933.720 ±      1407.224  ops/s
 
+------------------ one character values -------------------
+Benchmark                                          Mode  Cnt       Score       Error  Units
+TestDeserialization.deserializePojoFromJson       thrpt   25  232971.853 ±  3910.117  ops/s
+TestDeserialization.deserializePojoFromJsonBytes  thrpt   25  276230.894 ±  6749.750  ops/s
+TestDeserialization.deserializeProtoFromBytes     thrpt   25  768608.199 ± 20521.030  ops/s
+TestSerialization.serializePojoToJson             thrpt   25  779459.808 ±  7354.534  ops/s
+TestSerialization.serializePojoToJsonBytes        thrpt   25  771950.847 ± 14917.484  ops/s
+TestSerialization.serializeProtoToBytes           thrpt   25  945180.998 ±  7944.540  ops/s
+
 ------------------ one character field names in POJO -------------------
 Benchmark                                                          Mode  Cnt         Score        Error  Units
 TestDeserialization.deserializePojoFromJson                       thrpt   25    269118.984 ±   9345.276  ops/s

@@ -34,6 +34,10 @@ public class TestSize {
     // Single character field names in POJO:
     // Json: 455
     // Proto: 248
+
+    // Single character values:
+    // Json: 433
+    // Proto: 101
     public static void main(String[] args) throws IOException {
         Path out = Paths.get("tmp");
         File jsonOut = out.resolve("json").toFile();
