@@ -23,4 +23,21 @@ message Demo {
     message DemoNested {}
 }
 
-enum DemoEnum {ABC = 0; DEF = 1;}
+enum DemoEnum {
+    option allow_alias = true;
+    ONE = 0; TWO = 0; THREE = 1;
+}
+
+
+message DemoCamel {
+    string forgotAboutUnderscore = 1;
+}
+
+
+message User {
+
+}
+
+message Users {
+    repeated User users = 1;
+}
