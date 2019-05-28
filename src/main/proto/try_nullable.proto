@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package demo.proto.nullable;
+
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+
+// user.proto
+message User {
+   int32 id = 1;
+}
+
+message UserWrapper {
+    google.protobuf.Int32Value id = 1;
+}
+
+message UserOneof {
+    oneof opt {
+        int32 id = 1;
+    }
+}

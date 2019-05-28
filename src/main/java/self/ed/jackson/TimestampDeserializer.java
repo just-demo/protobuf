@@ -18,10 +18,9 @@ public class TimestampDeserializer extends StdDeserializer<Timestamp> {
     @Override
     public Timestamp deserialize(JsonParser parser, DeserializationContext context) throws IOException {
         switch (parser.getCurrentToken()) {
-            case VALUE_NUMBER_INT:
-                return Timestamps.fromMillis(parser.getLongValue());
-            default:
-                throw context.wrongTokenException(context.getParser(), Timestamp.class, VALUE_NUMBER_INT, "Cannot deserialize timestamp: " + context.getParser().currentToken());
+            case VALUE_NUMBER_INT: return Timestamps.fromMillis(parser.getLongValue());
+            default: // throw an error
+                throw new IllegalArgumentException("Say no to " + context.getParser().currentToken());
         }
     }
 }

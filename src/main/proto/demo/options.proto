@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package self.ed.proto.options;
+
+option java_multiple_files = true;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+    string message_option = 5000;
+}
+
+extend google.protobuf.FieldOptions {
+    string field_option = 5001;
+}
+
+message Demo {
+    option (message_option) = "Message option";
+    int32 id = 1 [(field_option) = "Field option"];
+}
+

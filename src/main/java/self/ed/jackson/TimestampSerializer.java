@@ -9,12 +9,9 @@ import com.google.protobuf.util.Timestamps;
 import java.io.IOException;
 
 public class TimestampSerializer extends StdSerializer<Timestamp> {
-    TimestampSerializer() {
-        super(Timestamp.class);
-    }
-
+    TimestampSerializer() { super(Timestamp.class); }
     @Override
-    public void serialize(Timestamp timestamp, JsonGenerator generator, SerializerProvider provider) throws IOException {
-        generator.writeNumber(Timestamps.toMillis(timestamp));
+    public void serialize(Timestamp value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+        gen.writeNumber(Timestamps.toMillis(value));
     }
 }
