@@ -48,11 +48,11 @@ public class TestSize {
         Files.createFile(jsonOut.toPath());
         Files.createFile(protoOut.toPath());
 
-        Generator.Task task = generateTask();
-        String json = new ObjectMapper().writeValueAsString(toPojoTask(task));
+        Item item = generateItem();
+        String json = new ObjectMapper().writeValueAsString(toPojoItem(item));
         System.out.println("Json: " + json.length());
-        System.out.println("Proto: " + toProtoTask(task).toByteArray().length);
-        toProtoTask(task).writeTo(new FileOutputStream(protoOut));
+        System.out.println("Proto: " + toProtoItem(item).toByteArray().length);
+        toProtoItem(item).writeTo(new FileOutputStream(protoOut));
         FileUtils.writeStringToFile(jsonOut, json, UTF_8);
         System.out.println("Json file: " + jsonOut.length());
         System.out.println("Proto file: " + protoOut.length());

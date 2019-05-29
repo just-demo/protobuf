@@ -3,7 +3,7 @@ package self.ed.pojo;
 import java.util.Date;
 import java.util.Objects;
 
-public class PojoSubTask {
+public class PojoSubItem {
     private Long id;
     private Long createdBy;
     private Date createdDate;
@@ -16,11 +16,11 @@ public class PojoSubTask {
     private PojoStatus status;
     private String result;
 
-    public PojoSubTask() {
+    public PojoSubItem() {
         // for deserialization
     }
 
-    public PojoSubTask(
+    public PojoSubItem(
             Long id,
             Long createdBy,
             Date createdDate,
@@ -138,7 +138,7 @@ public class PojoSubTask {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PojoSubTask that = (PojoSubTask) o;
+        PojoSubItem that = (PojoSubItem) o;
         return version == that.version &&
                 Objects.equals(id, that.id) &&
                 Objects.equals(createdBy, that.createdBy) &&
@@ -159,7 +159,7 @@ public class PojoSubTask {
 
     @Override
     public String toString() {
-        return "PojoSubTask{" +
+        return "PojoSubItem{" +
                 "id=" + id +
                 ", createdBy=" + createdBy +
                 ", createdDate=" + createdDate +

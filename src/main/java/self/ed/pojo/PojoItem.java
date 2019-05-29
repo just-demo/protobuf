@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class PojoTask {
+public class PojoItem {
     private Long id;
     private Long createdBy;
     private Date createdDate;
@@ -15,13 +15,13 @@ public class PojoTask {
     private String name;
     private String description;
     private boolean draft;
-    private List<PojoSubTask> subTasks = new ArrayList<>();
+    private List<PojoSubItem> subItems = new ArrayList<>();
 
-    public PojoTask() {
+    public PojoItem() {
         // for deserialization
     }
 
-    public PojoTask(
+    public PojoItem(
             Long id,
             Long createdBy,
             Date createdDate,
@@ -31,7 +31,7 @@ public class PojoTask {
             String name,
             String description,
             boolean draft,
-            List<PojoSubTask> subTasks
+            List<PojoSubItem> subItems
     ) {
         this.id = id;
         this.createdBy = createdBy;
@@ -42,7 +42,7 @@ public class PojoTask {
         this.name = name;
         this.description = description;
         this.draft = draft;
-        this.subTasks = subTasks;
+        this.subItems = subItems;
     }
 
     public Long getId() {
@@ -117,39 +117,39 @@ public class PojoTask {
         this.draft = draft;
     }
 
-    public List<PojoSubTask> getSubTasks() {
-        return subTasks;
+    public List<PojoSubItem> getSubItems() {
+        return subItems;
     }
 
-    public void setSubTasks(List<PojoSubTask> subTasks) {
-        this.subTasks = subTasks;
+    public void setSubItems(List<PojoSubItem> subItems) {
+        this.subItems = subItems;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PojoTask pojoTask = (PojoTask) o;
-        return version == pojoTask.version &&
-                draft == pojoTask.draft &&
-                Objects.equals(id, pojoTask.id) &&
-                Objects.equals(createdBy, pojoTask.createdBy) &&
-                Objects.equals(createdDate, pojoTask.createdDate) &&
-                Objects.equals(updatedBy, pojoTask.updatedBy) &&
-                Objects.equals(updatedDate, pojoTask.updatedDate) &&
-                Objects.equals(name, pojoTask.name) &&
-                Objects.equals(description, pojoTask.description) &&
-                Objects.equals(subTasks, pojoTask.subTasks);
+        PojoItem pojoItem = (PojoItem) o;
+        return version == pojoItem.version &&
+                draft == pojoItem.draft &&
+                Objects.equals(id, pojoItem.id) &&
+                Objects.equals(createdBy, pojoItem.createdBy) &&
+                Objects.equals(createdDate, pojoItem.createdDate) &&
+                Objects.equals(updatedBy, pojoItem.updatedBy) &&
+                Objects.equals(updatedDate, pojoItem.updatedDate) &&
+                Objects.equals(name, pojoItem.name) &&
+                Objects.equals(description, pojoItem.description) &&
+                Objects.equals(subItems, pojoItem.subItems);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, createdBy, createdDate, updatedBy, updatedDate, version, name, description, draft, subTasks);
+        return Objects.hash(id, createdBy, createdDate, updatedBy, updatedDate, version, name, description, draft, subItems);
     }
 
     @Override
     public String toString() {
-        return "PojoTask{" +
+        return "PojoItem{" +
                 "id=" + id +
                 ", createdBy=" + createdBy +
                 ", createdDate=" + createdDate +
@@ -159,7 +159,7 @@ public class PojoTask {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", draft=" + draft +
-                ", subTasks=" + subTasks +
+                ", subItems=" + subItems +
                 '}';
     }
 }

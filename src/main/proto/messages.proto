@@ -7,7 +7,7 @@ import "google/protobuf/wrappers.proto";
 
 option java_multiple_files = true;
 
-message ProtoTask {
+message ProtoItem {
     int64 id = 1;
     int64 created_by = 2;
     google.protobuf.Timestamp created_date = 3;
@@ -17,10 +17,10 @@ message ProtoTask {
     string name = 7;
     string description = 8;
     bool draft = 9;
-    repeated ProtoSubTask sub_tasks = 10;
+    repeated ProtoSubItem sub_items = 10;
 }
 
-message ProtoSubTask {
+message ProtoSubItem {
     int64 id = 1;
     int64 created_by = 2;
     google.protobuf.Timestamp created_date = 3;
