@@ -1,40 +1,41 @@
 package self.ed;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.util.stream.Stream;
+import java.util.Arrays;
 
 import static org.apache.commons.lang3.StringUtils.leftPad;
 import static org.apache.commons.lang3.StringUtils.rightPad;
 
 public class BenchmarkParser {
-    static String benchmark = "TestDeserialization.deserializePojoFromJson                       thrpt   25      182256.382 ±      4001.003  ops/s\n" +
-            "TestDeserialization.deserializePojoFromJsonBytes                  thrpt   25      226991.594 ±      5757.821  ops/s\n" +
-            "TestDeserialization.deserializePojoFromJsonBytes_NewObjectMapper  thrpt   25       11220.487 ±       140.649  ops/s\n" +
-            "TestDeserialization.deserializePojoFromJson_NewObjectMapper       thrpt   25       11207.175 ±       162.374  ops/s\n" +
-            "TestDeserialization.deserializeProtoFromBytes                     thrpt   25      630372.753 ±      9374.984  ops/s\n" +
-            "TestDeserialization.deserializeProtoFromJson                      thrpt   25       49135.439 ±       555.230  ops/s\n" +
-            "TestDeserialization.deserializeProtoFromJson_ObjectMapper         thrpt   25       61371.534 ±       837.948  ops/s\n" +
-            "TestInstantiation.newJacksonMapper                                thrpt   25     1657036.830 ±     83695.733  ops/s\n" +
-            "TestInstantiation.newProtoParser                                  thrpt   25  3582456346.811 ± 156270107.215  ops/s\n" +
-            "TestInstantiation.newProtoPrinter                                 thrpt   25  3643403013.139 ±  44039199.392  ops/s\n" +
-            "TestSerialization.newPojo                                         thrpt   25    11880572.379 ±    816207.208  ops/s\n" +
-            "TestSerialization.newProto                                        thrpt   25     4672526.875 ±    402248.431  ops/s\n" +
-            "TestSerialization.newProto_Rebuild                                thrpt   25     4525399.011 ±     33799.570  ops/s\n" +
-            "TestSerialization.serializePojoToJson                             thrpt   25      620003.405 ±      4351.272  ops/s\n" +
-            "TestSerialization.serializePojoToJsonBytes                        thrpt   25      607724.002 ±     19228.509  ops/s\n" +
-            "TestSerialization.serializePojoToJsonBytes_NewObjectMapper        thrpt   25        7327.699 ±        86.577  ops/s\n" +
-            "TestSerialization.serializePojoToJson_NewObjectMapper             thrpt   25        7381.435 ±        72.776  ops/s\n" +
-            "TestSerialization.serializeProtoToBytes                           thrpt   25      841617.472 ±      4744.149  ops/s\n" +
-            "TestSerialization.serializeProtoToJson                            thrpt   25       64985.082 ±      2184.085  ops/s\n" +
-            "TestSerialization.serializeProtoToJson_Jackson                    thrpt   25      103933.720 ±      1407.224  ops/s";
+    static String benchmark = "TestDeserialization.bytesToProto_Protobuf       thrpt   25  749639.241 ± 15633.363  ops/s\n" +
+            "TestDeserialization.jsonToPojo_Jackson          thrpt   25  219149.582 ±  2501.725  ops/s\n" +
+            "TestDeserialization.jsonToPojo_Jackson_NoCache  thrpt   25   12011.588 ±   739.354  ops/s\n" +
+            "TestDeserialization.jsonToProto_Jackson         thrpt   25   51997.936 ±   513.459  ops/s\n" +
+            "TestDeserialization.jsonToProto_Protobuf        thrpt   25   40824.312 ±   595.746  ops/s\n" +
+            "TestSerialization.pojoToJson_Jackson            thrpt   25  528482.500 ±  7472.607  ops/s\n" +
+            "TestSerialization.pojoToJson_Jackson_NoCache    thrpt   25    6222.373 ±    54.745  ops/s\n" +
+            "TestSerialization.protoToBytes_Protobuf         thrpt   25  708904.513 ±  8327.902  ops/s\n" +
+            "TestSerialization.protoToJson_Jackson           thrpt   25   89316.938 ±  1165.873  ops/s\n" +
+            "TestSerialization.protoToJson_Protobuf          thrpt   25   56641.151 ±   739.160  ops/s";
+
     public static void main(String[] args) {
-        for (String line: benchmark.split("\n")) {
-            String[] cols = line.split("\\s+");
-            System.out.println(rightPad(cols[0], 65) + leftPad(f1000(cols[3]), 15) + leftPad(f1000(cols[5]), 15));
-        }
+        Arrays.stream(benchmark.split("\n"))
+                .map(line -> line.split("\\s+"))
+                .sorted(BenchmarkParser::compareLines)
+                .forEach(cols -> System.out.println(rightPad(fName(cols[0]), 65) + leftPad(f1000(cols[3]), 15) + leftPad(f1000(cols[5]), 15)));
+    }
+
+    private static int compareLines(String[] cols1, String[] cols2) {
+        int cmp = cols2[0].split("\\.")[0].compareTo(cols1[0].split("\\.")[0]);
+        return cmp != 0 ? cmp : new BigDecimal(cols2[3]).compareTo(new BigDecimal(cols1[3]));
+    }
+
+    private static String fName(String name) {
+        String[] parts = name.split("\\.")[1].split("_", 2);
+        String[] direction = parts[0].split("To");
+        String description = parts[1].replace("NoCache", "not cached").replace("_", ", ");
+        return rightPad(direction[0].toLowerCase(), 5) + " > " + direction[1].toLowerCase() + " (" + description + ")";
     }
 
     private static String f1000(String str) {
