@@ -33,39 +33,39 @@ public class TestDeserialization {
     }
 
     @Benchmark
-    public void deserializeProtoFromBytes(InputState state) throws IOException {
+    public void bytesToProto_Protobuf(InputState state) throws IOException {
         ProtoItem.parseFrom(state.protoBytes);
     }
 
     @Benchmark
-    public void deserializeProtoFromJson(InputState state) throws IOException {
+    public void jsonToProto_Protobuf(InputState state) throws IOException {
         ProtoItem.Builder builder = ProtoItem.newBuilder();
         PROTO_PARSER.merge(state.protoJson, builder);
         builder.build();
     }
 
     @Benchmark
-    public void deserializeProtoFromJson_ObjectMapper(InputState state) throws IOException {
+    public void jsonToProto_Jackson(InputState state) throws IOException {
         PROTO_MAPPER.readValue(state.protoJsonJackson, ProtoItem.class);
     }
 
     @Benchmark
-    public void deserializePojoFromJsonBytes(InputState state) throws IOException {
+    public void jsonBytesToPojo_Jackson(InputState state) throws IOException {
         POJO_MAPPER.readValue(state.pojoBytes, PojoItem.class);
     }
 
     @Benchmark
-    public void deserializePojoFromJson(InputState state) throws IOException {
+    public void jsonToPojo_Jackson(InputState state) throws IOException {
         POJO_MAPPER.readValue(state.pojoJson, PojoItem.class);
     }
 
     @Benchmark
-    public void deserializePojoFromJsonBytes_NewObjectMapper(InputState state) throws IOException {
+    public void jsonBytesToPojo_Jackson_NoCache(InputState state) throws IOException {
         new ObjectMapper().readValue(state.pojoBytes, PojoItem.class);
     }
 
     @Benchmark
-    public void deserializePojoFromJson_NewObjectMapper(InputState state) throws IOException {
+    public void jsonToPojo_Jackson_NoCache(InputState state) throws IOException {
         new ObjectMapper().readValue(state.pojoJson, PojoItem.class);
     }
 }

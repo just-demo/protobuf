@@ -34,37 +34,37 @@ public class TestSerialization {
     }
 
     @Benchmark
-    public void serializeProtoToBytes(InputState state) {
+    public void protoToBytes_Protobuf(InputState state) {
         toProtoItem(state.item).toByteArray();
     }
 
     @Benchmark
-    public void serializeProtoToJson(InputState state) throws IOException {
+    public void protoToJson_Protobuf(InputState state) throws IOException {
         PROTO_PRINTER.print(toProtoItem(state.item));
     }
 
     @Benchmark
-    public void serializeProtoToJson_Jackson(InputState state) throws IOException {
+    public void protoToJson_Jackson(InputState state) throws IOException {
         PROTO_MAPPER.writeValueAsString(toProtoItem(state.item));
     }
 
     @Benchmark
-    public void serializePojoToJsonBytes(InputState state) throws IOException {
+    public void pojoToJsonBytes_Jackson(InputState state) throws IOException {
         POJO_MAPPER.writeValueAsBytes(toPojoItem(state.item));
     }
 
     @Benchmark
-    public void serializePojoToJson(InputState state) throws IOException {
+    public void pojoToJson_Jackson(InputState state) throws IOException {
         POJO_MAPPER.writeValueAsString(toPojoItem(state.item));
     }
 
     @Benchmark
-    public void serializePojoToJsonBytes_NewObjectMapper(InputState state) throws IOException {
+    public void pojoToJsonBytes_Jackson_NoCache(InputState state) throws IOException {
         new ObjectMapper().writeValueAsBytes(toPojoItem(state.item));
     }
 
     @Benchmark
-    public void serializePojoToJson_NewObjectMapper(InputState state) throws IOException {
+    public void pojoToJson_Jackson_NoCache(InputState state) throws IOException {
         new ObjectMapper().writeValueAsString(toPojoItem(state.item));
     }
 }
