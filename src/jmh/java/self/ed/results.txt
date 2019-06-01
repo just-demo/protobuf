@@ -144,6 +144,103 @@ TestSerialization.protoToBytes_Protobuf         thrpt   25   731350.203 ±  5670
 TestSerialization.protoToJson_Jackson           thrpt   25    89041.103 ±   909.733  ops/s
 TestSerialization.protoToJson_Protobuf          thrpt   25    55736.029 ±  1597.062  ops/s
 
+----- 2 items in the collection - repeat same scenarios ------------
+Benchmark                                           Mode  Cnt       Score       Error  Units
+TestDeserialization.aaabytesToProto_Protobuf       thrpt   25  710038.503 ± 36489.841  ops/s
+TestDeserialization.aaajsonToPojo_Jackson          thrpt   25  175497.537 ± 10848.011  ops/s
+TestDeserialization.aaajsonToPojo_Jackson_NoCache  thrpt   25   11391.220 ±   152.413  ops/s
+TestDeserialization.aaajsonToProto_Jackson         thrpt   25   51976.991 ±   673.299  ops/s
+TestDeserialization.aaajsonToProto_Protobuf        thrpt   25   41338.081 ±   533.591  ops/s
+TestDeserialization.bytesToProto_Protobuf          thrpt   25  635156.569 ± 18643.593  ops/s
+TestDeserialization.jsonToPojo_Jackson             thrpt   25  186487.170 ±  2001.929  ops/s
+TestDeserialization.jsonToPojo_Jackson_NoCache     thrpt   25   11262.726 ±   163.110  ops/s
+TestDeserialization.jsonToProto_Jackson            thrpt   25   51508.286 ±   683.602  ops/s
+TestDeserialization.jsonToProto_Protobuf           thrpt   25   41062.518 ±   841.537  ops/s
+TestSerialization.aaapojoToJson_Jackson            thrpt   25  521672.153 ± 11900.501  ops/s
+TestSerialization.aaapojoToJson_Jackson_NoCache    thrpt   25    6217.746 ±    64.973  ops/s
+TestSerialization.aaaprotoToBytes_Protobuf         thrpt   25  711852.858 ±  7070.897  ops/s
+TestSerialization.aaaprotoToJson_Jackson           thrpt   25   89791.717 ±   863.508  ops/s
+TestSerialization.aaaprotoToJson_Protobuf          thrpt   25   56472.703 ±   808.128  ops/s
+TestSerialization.pojoToJson_Jackson               thrpt   25  529300.493 ±  6741.420  ops/s
+TestSerialization.pojoToJson_Jackson_NoCache       thrpt   25    6269.234 ±    82.314  ops/s
+TestSerialization.protoToBytes_Protobuf            thrpt   25  713835.357 ±  6925.862  ops/s
+TestSerialization.protoToJson_Jackson              thrpt   25   90305.557 ±  1149.790  ops/s
+TestSerialization.protoToJson_Protobuf             thrpt   25   56535.996 ±   756.094  ops/s
+
+Benchmark                                           Mode  Cnt       Score       Error  Units
+AAATestDeserialization.bytesToProto_Protobuf       thrpt   25  752247.405 ± 11563.568  ops/s
+AAATestDeserialization.jsonToPojo_Jackson          thrpt   25  189985.417 ±  8886.808  ops/s
+AAATestDeserialization.jsonToPojo_Jackson_NoCache  thrpt   25   11333.828 ±   119.663  ops/s
+AAATestDeserialization.jsonToProto_Jackson         thrpt   25   52389.564 ±   508.757  ops/s
+AAATestDeserialization.jsonToProto_Protobuf        thrpt   25   40720.227 ±   572.074  ops/s
+AAATestSerialization.pojoToJson_Jackson            thrpt   25  532895.615 ±  7495.252  ops/s
+AAATestSerialization.pojoToJson_Jackson_NoCache    thrpt   25    6223.239 ±    57.844  ops/s
+AAATestSerialization.protoToBytes_Protobuf         thrpt   25  703460.312 ± 34365.643  ops/s
+AAATestSerialization.protoToJson_Jackson           thrpt   25   88977.798 ±  1354.123  ops/s
+AAATestSerialization.protoToJson_Protobuf          thrpt   25   54883.807 ±  1714.349  ops/s
+TestDeserialization.bytesToProto_Protobuf          thrpt   25  639460.670 ± 11512.940  ops/s
+TestDeserialization.jsonToPojo_Jackson             thrpt   25  186409.192 ±  3001.907  ops/s
+TestDeserialization.jsonToPojo_Jackson_NoCache     thrpt   25   11349.496 ±   118.252  ops/s
+TestDeserialization.jsonToProto_Jackson            thrpt   25   50303.746 ±  3986.720  ops/s
+TestDeserialization.jsonToProto_Protobuf           thrpt   25   40605.363 ±   514.848  ops/s
+TestSerialization.pojoToJson_Jackson               thrpt   25  520353.653 ±  8870.107  ops/s
+TestSerialization.pojoToJson_Jackson_NoCache       thrpt   25    6258.805 ±    67.337  ops/s
+TestSerialization.protoToBytes_Protobuf            thrpt   25  709740.270 ±  5764.385  ops/s
+TestSerialization.protoToJson_Jackson              thrpt   25   88674.745 ±   939.227  ops/s
+TestSerialization.protoToJson_Protobuf             thrpt   25   55134.076 ±  2298.620  ops/s
+ZZZTestDeserialization.bytesToProto_Protobuf       thrpt   25  632626.689 ±  8524.238  ops/s
+ZZZTestDeserialization.jsonToPojo_Jackson          thrpt   25  190822.675 ±  2187.999  ops/s
+ZZZTestDeserialization.jsonToPojo_Jackson_NoCache  thrpt   25   11362.090 ±   243.842  ops/s
+ZZZTestDeserialization.jsonToProto_Jackson         thrpt   25   52105.461 ±   622.198  ops/s
+ZZZTestDeserialization.jsonToProto_Protobuf        thrpt   25   41362.916 ±   414.481  ops/s
+ZZZTestSerialization.pojoToJson_Jackson            thrpt   25  530966.360 ±  6915.444  ops/s
+ZZZTestSerialization.pojoToJson_Jackson_NoCache    thrpt   25    6255.159 ±    81.605  ops/s
+ZZZTestSerialization.protoToBytes_Protobuf         thrpt   25  712261.101 ±  6892.787  ops/s
+ZZZTestSerialization.protoToJson_Jackson           thrpt   25   89937.827 ±   936.785  ops/s
+ZZZTestSerialization.protoToJson_Protobuf          thrpt   25   56500.087 ±   683.600  ops/s
+
+Benchmark                                           Mode  Cnt       Score       Error  Units
+AAATestDeserialization.bytesToProto_Protobuf       thrpt   25  762729.286 ± 13183.207  ops/s
+AAATestDeserialization.jsonToPojo_Jackson          thrpt   25  219166.911 ±  2193.519  ops/s
+AAATestDeserialization.jsonToPojo_Jackson_NoCache  thrpt   25   13123.763 ±   171.863  ops/s
+AAATestDeserialization.jsonToProto_Jackson         thrpt   25   60143.547 ±   509.079  ops/s
+AAATestDeserialization.jsonToProto_Protobuf        thrpt   25   47628.214 ±   345.987  ops/s
+AAATestSerialization.pojoToJson_Jackson            thrpt   25  601959.202 ±  5192.945  ops/s
+AAATestSerialization.pojoToJson_Jackson_NoCache    thrpt   25    7104.403 ±   268.293  ops/s
+AAATestSerialization.protoToBytes_Protobuf         thrpt   25  826526.196 ± 12145.024  ops/s
+AAATestSerialization.protoToJson_Jackson           thrpt   25  103021.117 ±   779.285  ops/s
+AAATestSerialization.protoToJson_Protobuf          thrpt   25   65192.351 ±   533.618  ops/s
+BBBTestDeserialization.bytesToProto_Protobuf       thrpt   25  688305.848 ± 34753.071  ops/s
+BBBTestDeserialization.jsonToPojo_Jackson          thrpt   25  187538.271 ±  2252.012  ops/s
+BBBTestDeserialization.jsonToPojo_Jackson_NoCache  thrpt   25   11240.523 ±   146.014  ops/s
+BBBTestDeserialization.jsonToProto_Jackson         thrpt   25   52087.547 ±   738.806  ops/s
+BBBTestDeserialization.jsonToProto_Protobuf        thrpt   25   40721.228 ±   831.683  ops/s
+BBBTestSerialization.pojoToJson_Jackson            thrpt   25  518599.537 ±  6638.401  ops/s
+BBBTestSerialization.pojoToJson_Jackson_NoCache    thrpt   25    6270.827 ±    49.215  ops/s
+BBBTestSerialization.protoToBytes_Protobuf         thrpt   25  713737.155 ±  7164.172  ops/s
+BBBTestSerialization.protoToJson_Jackson           thrpt   25   88466.533 ±  1331.786  ops/s
+BBBTestSerialization.protoToJson_Protobuf          thrpt   25   56823.718 ±  1017.812  ops/s
+TestDeserialization.bytesToProto_Protobuf          thrpt   25  632827.027 ±  8408.943  ops/s
+TestDeserialization.jsonToPojo_Jackson             thrpt   25  188470.423 ±  5015.404  ops/s
+TestDeserialization.jsonToPojo_Jackson_NoCache     thrpt   25   11285.449 ±   136.573  ops/s
+TestDeserialization.jsonToProto_Jackson            thrpt   25   51609.453 ±   618.650  ops/s
+TestDeserialization.jsonToProto_Protobuf           thrpt   25   41075.191 ±   502.794  ops/s
+TestSerialization.pojoToJson_Jackson               thrpt   25  521748.714 ±  7266.815  ops/s
+TestSerialization.pojoToJson_Jackson_NoCache       thrpt   25    6228.282 ±    92.065  ops/s
+TestSerialization.protoToBytes_Protobuf            thrpt   25  715850.351 ±  8349.113  ops/s
+TestSerialization.protoToJson_Jackson              thrpt   25   89574.020 ±  1071.878  ops/s
+TestSerialization.protoToJson_Protobuf             thrpt   25   55836.573 ±   693.589  ops/s
+ZZZTestDeserialization.bytesToProto_Protobuf       thrpt   25  646784.396 ± 17233.058  ops/s
+ZZZTestDeserialization.jsonToPojo_Jackson          thrpt   25  186645.295 ±  2424.894  ops/s
+ZZZTestDeserialization.jsonToPojo_Jackson_NoCache  thrpt   25   11332.000 ±   168.627  ops/s
+ZZZTestDeserialization.jsonToProto_Jackson         thrpt   25   51885.358 ±   762.665  ops/s
+ZZZTestDeserialization.jsonToProto_Protobuf        thrpt   25   41204.856 ±   732.756  ops/s
+ZZZTestSerialization.pojoToJson_Jackson            thrpt   25  526599.388 ±  6995.011  ops/s
+ZZZTestSerialization.pojoToJson_Jackson_NoCache    thrpt   25    6237.047 ±    80.534  ops/s
+ZZZTestSerialization.protoToBytes_Protobuf         thrpt   25  713328.436 ±  5972.070  ops/s
+ZZZTestSerialization.protoToJson_Jackson           thrpt   25   89806.706 ±   645.543  ops/s
+ZZZTestSerialization.protoToJson_Protobuf          thrpt   25   56004.876 ±   644.216  ops/s
+
 ------------------ one character values -------------------
 Benchmark                                          Mode  Cnt       Score       Error  Units
 TestDeserialization.deserializePojoFromJson       thrpt   25  232971.853 ±  3910.117  ops/s
