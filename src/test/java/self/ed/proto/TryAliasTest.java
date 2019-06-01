@@ -5,13 +5,15 @@ import com.google.protobuf.util.JsonFormat;
 import org.junit.Test;
 import self.ed.proto.alias.Demo;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import static self.ed.proto.alias.Demo.Type.ONE;
 import static self.ed.proto.alias.Demo.Type.TWO;
 
 public class TryAliasTest {
     @Test
     public void testAlias() throws InvalidProtocolBufferException {
+        assertSame(ONE, TWO);
+
         Demo demo = Demo.newBuilder().build();
         assertEquals(ONE, demo.getType());
 
