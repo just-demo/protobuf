@@ -3,7 +3,6 @@ package demo.mapper;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Timestamp;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 import java.time.Instant;
 import java.util.Date;
