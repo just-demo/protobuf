@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package self.ed.proto.any;
+package demo.proto.any;
 
 import "google/protobuf/any.proto";
 

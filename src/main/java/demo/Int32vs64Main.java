@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
 import com.hubspot.jackson.datatype.protobuf.ProtobufModule;
-import self.ed.proto.intvslong.Demo;
+import demo.proto.intvslong.Demo;
 
 public class Int32vs64Main {
     public static void main(String[] args) throws InvalidProtocolBufferException, JsonProcessingException {

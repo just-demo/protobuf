@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package self.ed.proto;
+package demo.proto;
 
 message UnrecognizedMessage {
     enum Type {

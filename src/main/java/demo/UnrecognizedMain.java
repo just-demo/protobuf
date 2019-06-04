@@ -1,7 +1,7 @@
 package demo;
 
 
-import self.ed.proto.unreq.User;
+import demo.proto.unreq.User;
 
 public class UnrecognizedMain {
     public static void main(String[] args) {

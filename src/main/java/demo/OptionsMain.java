@@ -1,9 +1,9 @@
 package demo;
 
-import self.ed.proto.options.Demo;
+import demo.proto.options.Demo;
 
-import static self.ed.proto.options.Options.fieldOption;
-import static self.ed.proto.options.Options.messageOption;
+import static demo.proto.options.Options.fieldOption;
+import static demo.proto.options.Options.messageOption;
 
 public class OptionsMain {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package self.ed.proto;
+package demo.proto;
 
 message ExtensionsMessage {
     optional int32 id = 1;

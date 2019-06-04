@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package self.ed.proto.unreq;
+package demo.proto.unreq;
 
 option java_multiple_files = true;
 

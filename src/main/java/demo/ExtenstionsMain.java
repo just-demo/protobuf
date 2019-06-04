@@ -2,8 +2,8 @@ package demo;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.JsonFormat;
-import self.ed.proto.ext.UserOuterClass;
-import self.ed.proto.ext.User;
+import demo.proto.ext.UserOuterClass;
+import demo.proto.ext.User;
 
 public class ExtenstionsMain {
     public static void main(String[] args) throws InvalidProtocolBufferException {

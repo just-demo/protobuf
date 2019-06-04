@@ -6,8 +6,6 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ValueMapping;
 import org.mapstruct.factory.Mappers;
-import self.ed.pojo.PojoStatus;
-import self.ed.proto.ProtoStatus;
 
 import static org.mapstruct.CollectionMappingStrategy.ADDER_PREFERRED;
 import static org.mapstruct.ReportingPolicy.IGNORE;

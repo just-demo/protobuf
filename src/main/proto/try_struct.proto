@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package self.ed.proto.struct;
+package demo.proto.struct;
 
 import "google/protobuf/struct.proto";
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package self.ed.proto.types;
+package demo.proto.types;
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";

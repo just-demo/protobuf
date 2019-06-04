@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package self.ed.proto;
+package demo.proto;
 
 message DefaultMessage {
     enum Type {
