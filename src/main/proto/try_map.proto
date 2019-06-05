@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package demo.proto.map;
+
+message DemoMessage {
+    map<int32, bool> map1 = 1;
+    map<int64, bool> map2 = 2;
+    map<string, bool> map3 = 3;
+    map<string, DemoEnum> map4 = 4;
+    map<string, DemoMessage> map5 = 5;
+
+//    map<float, bool> map6 = 6; // error
+//    map<DemoEnum, bool> map7 = 7; // error
+//    map<DemoMessage, bool> map8 = 8; // error
+//    map<string, repeated DemoEnum> map9 = 9; // error
+}
+
+enum DemoEnum {
+    ONE = 0;
+    TWO = 1;
+}

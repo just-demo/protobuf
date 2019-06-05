@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package demo.proto.enum;
+
+enum EnumOne {
+    UNSPECIFIED = 0;
+}
+
+//enum EnumTwo {
+//    UNSPECIFIED = 0; // conflicts with EnumOne.UNSPECIFIED
+//}
+
+message Message {
+    enum EnumThree {
+        UNSPECIFIED = 0;
+    }
+}
