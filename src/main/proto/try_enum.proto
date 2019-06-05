@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package demo.proto.enum;
+package demo.proto.en;
 
 enum EnumOne {
     UNSPECIFIED = 0;
