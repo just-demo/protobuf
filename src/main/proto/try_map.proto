@@ -5,14 +5,15 @@ package demo.proto.map;
 message DemoMessage {
     map<int32, bool> map1 = 1;
     map<int64, bool> map2 = 2;
-    map<string, bool> map3 = 3;
-    map<string, DemoEnum> map4 = 4;
-    map<string, DemoMessage> map5 = 5;
+    map<bool, bool> map3 = 3;
+    map<string, bool> map4 = 4;
+    map<string, DemoEnum> map5 = 5;
+    map<string, DemoMessage> map6 = 6;
 
-//    map<float, bool> map6 = 6; // error
-//    map<DemoEnum, bool> map7 = 7; // error
-//    map<DemoMessage, bool> map8 = 8; // error
-//    map<string, repeated DemoEnum> map9 = 9; // error
+//    map<float, bool> map7 = 7; // error
+//    map<DemoEnum, bool> map8 = 8; // error
+//    map<DemoMessage, bool> map9 = 9; // error
+//    map<string, repeated DemoEnum> map10 = 10; // error
 }
 
 enum DemoEnum {
